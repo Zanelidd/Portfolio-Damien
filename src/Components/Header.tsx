@@ -7,7 +7,8 @@ import { DarkModeContext } from "../Context/DarkModeProvider";
 import { DarkModeContextType } from "../services/types";
 
 const Header = () => {
-  const { darkMode } = useContext<DarkModeContextType>(DarkModeContext);
+  const { darkMode, setDarkMode } =
+    useContext<DarkModeContextType>(DarkModeContext);
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div
@@ -22,6 +23,15 @@ const Header = () => {
         <Hamburger toggled={isOpen} toggle={setIsOpen} />
         {isOpen && <BurgerNavBar isOpen={isOpen} setIsOpen={setIsOpen} />}
       </div>
+      <button
+        className={darkMode ? style.buttonDarkMode : style.buttonLightMode}
+        type="button"
+        onClick={() => {
+          setDarkMode(!darkMode);
+        }}
+      >
+        Dark Mode
+      </button>
     </div>
   );
 };

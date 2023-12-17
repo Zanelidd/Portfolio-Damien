@@ -1,28 +1,42 @@
 import style from "./styles/ProjectCards.module.css";
-import { ProjectType } from "../services/types";
+import { DarkModeContextType, ProjectType } from "../services/types";
+import { useContext } from "react";
+import { DarkModeContext } from "../Context/DarkModeProvider";
 
-const ProjectCards = (project: ProjectType) => {
+const ProjectCards = (proje: ProjectType) => {
+  const { darkMode } = useContext<DarkModeContextType>(DarkModeContext);
+
   return (
-    <div className={style.project_container}>
-      <h2 className={style.project_title}>{project.title}</h2>
+    <div
+      className={
+        darkMode ? style.project_container_dark : style.project_container
+      }
+    >
+      <h2 className={darkMode ? style.project_title_dark : style.project_title}>
+        {proje.proje.title}
+      </h2>
       <div className={style.info_container}>
         <img
           className={style.project_img}
-          src={`../assets/${project.img}`}
-          alt={project.title}
+          src={`${proje.proje.img}`}
+          alt={proje.proje.title}
           onClick={() => {
-            location.href = project.url;
+            location.href = proje.proje.url;
           }}
         />
-        <p className={style.project_text}>{project.description}</p>
+        <p className={darkMode ? style.project_text_dark : style.project_text}>
+          {proje.proje.description}
+        </p>
       </div>
       <div className={style.skill_container}>
-        {project.skillsValue.map((skillvalue: string) => {
+        {proje.proje.skillsValue.map((skillvalue: string) => {
+          console.log(skillvalue);
+
           return (
             <img
               key={skillvalue}
               className={style.skill}
-              src={`../assets/${skillvalue}`}
+              src={`${skillvalue}`}
               alt={skillvalue}
             />
           );

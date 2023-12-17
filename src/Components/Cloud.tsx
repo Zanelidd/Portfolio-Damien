@@ -8,6 +8,7 @@ type CustomCloudProps = {
 const CustomCloud = (cloud: CustomCloudProps) => {
   return (
     <Cloud
+      key={cloud.cloud.opacity.toString()}
       seed={1}
       visible
       segments={1}

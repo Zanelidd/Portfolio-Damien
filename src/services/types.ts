@@ -11,12 +11,14 @@ export type ChildernProps = {
 };
 
 export type ProjectType = {
-  id: number;
-  title: string;
-  description: string;
-  img: string;
-  url: string;
-  skillsValue: string[];
+  proje: {
+    id: number;
+    title: string;
+    description: string;
+    img: string;
+    url: string;
+    skillsValue: string[];
+  };
 };
 
 export type BurgerType = {

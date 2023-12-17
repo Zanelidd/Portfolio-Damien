@@ -1,4 +1,4 @@
-import { Sky, Html, Stars, Stats } from "@react-three/drei";
+import { Sky, Html, Stars, Stats, Clouds } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useCallback, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -57,24 +57,22 @@ const WelcomeBackground = () => {
         // state.camera.lookAt(0, 0, 0);
         state.camera.updateProjectionMatrix();
       }
-      const cloudSpeed = 0.05;
-      const updatedClouds = clouds.map((cloud) => {
-        if (cloud.position.z > 15) {
-          cloud.position.z = -35;
-          cloud.position.x = Math.random() * 40 - 20;
-          cloud.opacity = Math.random() * 0.5 + 0.5;
+      const cloudSpeed = 0.5;
+      const updatedClouds = clouds.map((cloud, index) => {
+        const updatedCloud = { ...cloud };
+        if (updatedCloud.position.z < state.camera.position.z + 50) {
+          updatedCloud.position.z += cloudSpeed;
         } else {
-          cloud.position.z += cloudSpeed;
+          updatedCloud.position.z = -35 - index * 1.5;
+          updatedCloud.position.x = Math.random() * 40 - 20;
+          updatedCloud.opacity = Math.random() * 0.5 + 0.5;
         }
-        darkMode ? (cloud.opacity = 1) : cloud.opacity;
-        return cloud;
+        darkMode && (updatedCloud.opacity = 1);
+        return updatedCloud;
       });
       setClouds(updatedClouds);
     });
-
-    return clouds.map((cloud, index: number) => {
-      return <CustomCloud key={index} cloud={cloud} />;
-    });
+    return null;
   };
 
   return (
@@ -89,7 +87,13 @@ const WelcomeBackground = () => {
         <ambientLight intensity={darkMode ? 0.55 : 0.8} />
         <pointLight intensity={2} position={[0, 0, -1000]} />
         <Rig />
+        <Clouds>
+          {clouds.map((cloud: CloudData, index: number) => {
+            return <CustomCloud key={index} cloud={cloud} />;
+          })}
+        </Clouds>
 
+        {/* <OrbitControls /> */}
         {darkMode && (
           <Stars
             radius={100}

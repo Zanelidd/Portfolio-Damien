@@ -1,49 +1,34 @@
-.project_card_container{
-    /* height: auto; */
-    width: 100vw;
+.project_card_container {
+    background: #bababa;
+    height: 92vh;
+}
+
+.project_card_container_dark {
+    height: 92vh;
+    background-color: #4f4f4f;
 }
 
 .project_cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    height: 90vh;
-    width: 100vw;
-    margin-top: 5rem;
     position: relative;
-    gap :2rem;
+    gap: 2rem;
     overflow: auto;
-    margin: 3rem;
-
-
+    padding: 1.9rem;
 }
 
-.buttonDarkMode {
-    width: 5rem;
-    height: 2rem;
-    background-color: rgba(255, 252, 252, 0);
-    position: absolute;
-    right: 2%;
-    top: 3%;
-    border: none;
-    color: white;
-
-}
-
-.buttonLightMode {
-    width: 5rem;
-    height: 2rem;
-    background-color: rgba(255, 255, 255, 0);
-    position: absolute;
-    border: none;
-    right: 2%;
-    top: 3%;
-
-
+.title {
+    font-size: 35px;
+    margin: 0;
+    padding: 2rem
 }
 
 .title_dark {
-    color: white;
+    color: rgb(167, 167, 167);
+    font-size: 35px;
+    margin: 0;
+    padding: 2rem
 }
 
 
