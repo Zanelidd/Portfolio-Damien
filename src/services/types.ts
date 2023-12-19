@@ -1,4 +1,3 @@
-import { Vector3 } from "three/src/Three.js";
 import { type ReactNode } from "react";
 
 export type DarkModeContextType = {
@@ -27,7 +26,7 @@ export type BurgerType = {
 };
 
 export type CloudData = {
-  position: Vector3;
+  position: { x: number; y: number; z: number };
   speed: number;
   opacity: number;
 };
