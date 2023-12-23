@@ -1,8 +1,8 @@
-import { type ReactNode } from "react";
+import { Dispatch, SetStateAction, type ReactNode } from "react";
 
 export type DarkModeContextType = {
   darkMode: boolean;
-  setDarkMode: (darkMode: boolean) => void;
+  setDarkMode: Dispatch<SetStateAction<boolean>>;
 };
 
 export type ChildernProps = {
@@ -10,19 +10,17 @@ export type ChildernProps = {
 };
 
 export type ProjectType = {
-  proje: {
-    id: number;
-    title: string;
-    description: string;
-    img: string;
-    url: string;
-    skillsValue: string[];
-  };
+  id: number;
+  title: string;
+  description: string;
+  img: string;
+  url: string;
+  skillsValue: string[];
 };
 
 export type BurgerType = {
   isOpen: boolean;
-  setIsOpen: (isOpen: boolean) => void;
+  setIsOpen: Dispatch<SetStateAction<boolean>>;
 };
 
 export type CloudData = {

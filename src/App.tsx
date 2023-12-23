@@ -3,7 +3,6 @@ import Home from "./pages/Home.jsx";
 import "./App.css";
 import WelcomePage from "./pages/WelcomePage.jsx";
 import Layout from "./layouts/Layout.jsx";
-
 import { useState } from "react";
 import { DarkModeContext } from "./Context/DarkModeProvider.jsx";
 import Projects from "./pages/Projects.jsx";
