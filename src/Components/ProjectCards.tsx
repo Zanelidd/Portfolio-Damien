@@ -3,7 +3,11 @@ import { DarkModeContextType, ProjectType } from "../services/types";
 import { useContext } from "react";
 import { DarkModeContext } from "../Context/DarkModeProvider";
 
-const ProjectCards = (proje: ProjectType) => {
+type ProjectCardsProps = {
+  project: ProjectType;
+};
+
+const ProjectCards = ({ project }: ProjectCardsProps) => {
   const { darkMode } = useContext<DarkModeContextType>(DarkModeContext);
 
   return (
@@ -13,23 +17,23 @@ const ProjectCards = (proje: ProjectType) => {
       }
     >
       <h2 className={darkMode ? style.project_title_dark : style.project_title}>
-        {proje.proje.title}
+        {project.title}
       </h2>
       <div className={style.info_container}>
         <img
           className={style.project_img}
-          src={`${proje.proje.img}`}
-          alt={proje.proje.title}
+          src={`${project.img}`}
+          alt={project.title}
           onClick={() => {
-            location.href = proje.proje.url;
+            location.href = project.url;
           }}
         />
         <p className={darkMode ? style.project_text_dark : style.project_text}>
-          {proje.proje.description}
+          {project.description}
         </p>
       </div>
       <div className={style.skill_container}>
-        {proje.proje.skillsValue.map((skillvalue: string) => {
+        {project.skillsValue.map((skillvalue: string) => {
           console.log(skillvalue);
 
           return (

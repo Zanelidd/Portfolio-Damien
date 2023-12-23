@@ -1,10 +1,10 @@
 import { Canvas } from "@react-three/fiber";
-import { Suspense, useContext } from "react";
+import { ReactNode, Suspense, useContext } from "react";
 import { Cloud, Html, Sky, Stars } from "@react-three/drei";
 import { DarkModeContext } from "../Context/DarkModeProvider";
 import { DarkModeContextType } from "../services/types";
 
-const BackgroundLayout = (Children) => {
+const BackgroundLayout = (Children: ReactNode) => {
   const { darkMode } = useContext<DarkModeContextType>(DarkModeContext);
 
   return (

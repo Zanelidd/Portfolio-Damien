@@ -5,7 +5,7 @@ export type DarkModeContextType = {
   setDarkMode: Dispatch<SetStateAction<boolean>>;
 };
 
-export type ChildernProps = {
+export type ChildrenProps = {
   children: ReactNode;
 };
 
