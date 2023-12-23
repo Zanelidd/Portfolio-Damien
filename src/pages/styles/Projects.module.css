@@ -1,0 +1,45 @@
+.project_card_container {
+    background: #bababa;
+    height: 92vh;
+}
+
+.project_card_container_dark {
+    height: 92vh;
+    background-color: #4f4f4f;
+}
+
+.project_cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    position: relative;
+    gap: 2rem;
+    overflow: auto;
+    padding: 1.9rem;
+}
+
+.title {
+    font-size: 35px;
+    margin: 0;
+    padding: 2rem
+}
+
+.title_dark {
+    color: rgb(167, 167, 167);
+    font-size: 35px;
+    margin: 0;
+    padding: 2rem
+}
+
+
+@media screen and (max-width : 720px) {
+    .project_cards {
+        display: flex;
+        justify-content: space-around;
+        width: 100vw;
+        margin-top: 5rem;
+        gap: 2rem;
+
+    }
+
+}
