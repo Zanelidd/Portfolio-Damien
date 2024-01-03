@@ -32,7 +32,7 @@ const CloudBackground = ({
         const newCloud: CloudData = {
           position: {
             x: Math.floor(Math.random() * (55 + 65 + 1) - 65),
-            y: -22,
+            y: -21.5,
             z: Math.floor(Math.random() * (15 + 35 + 1) - 35),
           },
           speed: 0.1,

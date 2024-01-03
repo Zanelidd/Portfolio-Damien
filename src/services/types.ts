@@ -1,4 +1,6 @@
+import { ReactThreeFiber } from "@react-three/fiber";
 import { Dispatch, SetStateAction, type ReactNode } from "react";
+import THREE from "three";
 
 export type DarkModeContextType = {
   darkMode: boolean;
@@ -27,4 +29,9 @@ export type CloudData = {
   position: { x: number; y: number; z: number };
   speed: number;
   opacity: number;
+};
+
+export type CloudProps = JSX.IntrinsicElements["group"] & {
+  ref: React.Ref<ReactThreeFiber.Object3DNode<THREE.Group, typeof THREE.Group>>;
+  position: { x: number; y: number; z: number };
 };
