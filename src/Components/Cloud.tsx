@@ -1,7 +1,7 @@
 import { Cloud } from "@react-three/drei";
 import { CloudData, DarkModeContextType } from "../services/types";
 import { useFrame } from "@react-three/fiber";
-import { useContext, useRef } from "react";
+import { ElementRef, useContext, useRef } from "react";
 import { DarkModeContext } from "../Context/DarkModeProvider";
 
 type CustomCloudProps = {
@@ -10,7 +10,7 @@ type CustomCloudProps = {
 };
 
 const CustomCloud = ({ cloud }: CustomCloudProps) => {
-  const meshRef = useRef<THREE.Mesh>(null);
+  const meshRef = useRef<ElementRef<typeof Cloud>>(null);
   const { darkMode } = useContext<DarkModeContextType>(DarkModeContext);
 
   useFrame(() => {
