@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    max-width: 35vw;
+    max-width: 25vw;
     margin-top: 2rem;
     padding: 2rem;
     height: fit-content;
@@ -94,7 +94,7 @@
 
 .skill {
     display: flex;
-    width: 3rem;
+    width: 2rem;
     height: auto;
     gap: 5rem;
     margin-bottom: 2rem;
