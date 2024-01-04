@@ -1,26 +1,24 @@
 .home_container {
-    height: 90vh;
-    width: 100vw;
     font-size: 32px;
-    position: relative;
     background-color: #bababa;
 
 }
 
 .home_container_dark {
-    height: 90vh;
-    width: 100vw;
     font-size: 32px;
-    position: relative;
     background-color: #4f4f4f;
 
+}
+
+.homepage {
+    height: 92vh;
 }
 
 .homepage_img {
     height: 25vw;
     width: 25vw;
     position: absolute;
-    top: 10%;
+    top: 15%;
     left: 10%;
     border-radius: 50%;
     /* background-position: center;
