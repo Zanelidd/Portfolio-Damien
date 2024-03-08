@@ -5,6 +5,17 @@
     justify-content: space-evenly;
     height: 92vh;
     width: 100vw;
+    background: #bababa;
+}
+
+.contact_container_dark {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 92vh;
+    width: 100vw;
+    background-color: #4f4f4f;
 }
 
 .buttonDarkMode {
@@ -31,6 +42,6 @@
 
 }
 
-        .title_dark{
-            color: white;
-        }
+.title_dark {
+    color: white;
+}
