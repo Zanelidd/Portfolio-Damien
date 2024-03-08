@@ -18,20 +18,20 @@ const Header = () => {
     >
       <div className={style.navBarContainer}>
         <NavBar />
+        <button
+          className={darkMode ? style.buttonDarkMode : style.buttonLightMode}
+          type="button"
+          onClick={() => {
+            setDarkMode(!darkMode);
+          }}
+        >
+          Dark Mode
+        </button>
       </div>
       <div className={style.burger}>
         <Hamburger toggled={isOpen} toggle={setIsOpen} />
         {isOpen && <BurgerNavBar isOpen={isOpen} setIsOpen={setIsOpen} />}
       </div>
-      <button
-        className={darkMode ? style.buttonDarkMode : style.buttonLightMode}
-        type="button"
-        onClick={() => {
-          setDarkMode(!darkMode);
-        }}
-      >
-        Dark Mode
-      </button>
     </div>
   );
 };

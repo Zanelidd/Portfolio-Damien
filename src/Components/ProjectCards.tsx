@@ -34,8 +34,6 @@ const ProjectCards = ({ project }: ProjectCardsProps) => {
       </div>
       <div className={style.skill_container}>
         {project.skillsValue.map((skillvalue: string) => {
-          console.log(skillvalue);
-
           return (
             <img
               key={skillvalue}

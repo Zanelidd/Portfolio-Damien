@@ -57,7 +57,7 @@ const CloudBackground = ({
 
   useFrame((state) => {
     if (clicked) {
-      state.camera.position.lerp(new Vector3(0, 0, -150), 0.005);
+      state.camera.position.lerp(new Vector3(0, 0, -150), 0.0008);
       state.camera.updateProjectionMatrix();
     }
   });
